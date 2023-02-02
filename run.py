@@ -65,7 +65,7 @@ def countdb(date):
         for chunk in req.iter_content(chunk_size=8192):
             f.write(chunk)
     root = app.root_path
-    root = "{}/dataset/{}".format(root, filename)
+    root = "{}/{}".format(root, filename)
     df = pd.read_parquet(root)
     df = df.fillna("0")
     cur = mysql.connection.cursor()
@@ -146,7 +146,7 @@ def pricedb(para):
     fn = f"yellow_tripdata_{month}.parquet"
     if fn in local:
         root = app.root_path
-        root = "{}/dataset/{}".format(root, fn)
+        root = "{}/{}".format(root, fn)
         tname = re.sub(r'[^\w]', '', fn)
         tname = tname[0:-7]
     else:
@@ -157,7 +157,7 @@ def pricedb(para):
             for chunk in req.iter_content(chunk_size=8192):
                 f.write(chunk)
         root = app.root_path
-        root = "{}/dataset/{}".format(root, filename)
+        root = "{}/{}".format(root, filename)
         tname = re.sub(r'[^\w]', '', filename)
         tname = tname[0:-7]
     df = pd.read_parquet(root)
