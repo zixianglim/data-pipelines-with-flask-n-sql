@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{month}}</h1>
+<br>
+<h4> Pickup Location ID: {{pickup}} </h4>
+<h4> Dropoff Location ID: {{dropoff}} </h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Cheapest Hour</th>
+            <th>Avg Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for users in userdetails %}
+    <tr>
+        <td> {{users[0]}}</td>
+        <td> {{users[1]}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+{% endblock %}

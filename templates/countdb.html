@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{date}}</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Hour</th>
+            <th>Trip Count</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for users in userdetails %}
+    <tr>
+        <td> {{users[0]}}</td>
+        <td> {{users[1]}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+{% endblock %}

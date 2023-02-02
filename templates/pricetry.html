@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="red-text" style="color: red;"> Records not found. Try again.. </h3>
+<br>
+<form method="POST" action="">
+    Month <input type = "month" min="2009-01" max="2022-09" name = "month" />
+    <br>
+    <label for="pickup">pickup:</label><br>
+    <input type="number" id="pickup" name="pickup"><br>
+    <label for="dropoff">dropoff:</label><br>
+    <input type="number" id="dropoff" name="dropoff">
+    <br>
+    <br>
+    <input type = "submit" value = "Submit" /></p>
+ </form>
+ 
+ {% endblock %}
